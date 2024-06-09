@@ -37,8 +37,7 @@ The project involves the following steps:
 ### ROC Curve
 The ROC (Receiver Operating Characteristic) curve is a graphical representation of a model's diagnostic ability. The ROC curve illustrates the trade-off between the true positive rate (sensitivity) and the false positive rate (1-specificity) across different threshold values. The AUC (Area Under the Curve) score, which ranges from 0 to 1, indicates the model's ability to distinguish between classes. An AUC score of 0.87 suggests that the model performs well in predicting customer churn.
 
-![ROC Curve](![image](![Uploading image.png…]()
-)
+![ROC Curve](https://raw.githubusercontent.com/NavarroAlexKU/Predicting-Customer-Churn/main/ROC%20Plot.jfif)
 
 ### Confusion Matrix and Metrics
 The confusion matrix provides a summary of the prediction results on a classification problem. It shows the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN). From the confusion matrix, we can calculate several performance metrics:
