@@ -68,4 +68,51 @@ The confusion matrix provides a summary of the prediction results on a classific
 - **Specificity** is the proportion of actual negatives (no churn) that were correctly identified. In this case, it is 95.49%. This indicates how well the model identifies true negatives.
 - **Accuracy** is the proportion of correctly classified instances (both true positives and true negatives) out of the total number of instances. In this case, it is 85.85%.
 
+## Predicting Customer Bank Churn
 
+Here is an example of how to use the trained model to predict whether a new customer will leave the bank:
+
+```python
+# Define the new customer's data
+new_customer = {
+    'CreditScore': 600,
+    'Age': 40,
+    'Tenure': 3,
+    'Balance': 60000,
+    'NumOfProducts': 2,
+    'HasCrCard': 1,  # Yes -> 1
+    'IsActiveMember': 1,  # Yes -> 1
+    'EstimatedSalary': 50000,
+    'Gender_Female': 0,  # Male -> 0, Female -> 0
+    'Gender_Male': 1,    # Male -> 1, Female -> 0
+    'Geography_France': 1,  # France -> 1, Germany -> 0, Spain -> 0
+    'Geography_Germany': 0,
+    'Geography_Spain': 0
+}
+
+# Convert the new customer's data to a DataFrame
+new_customer_df = pd.DataFrame(new_customer, index=[0])
+
+# Ensure the new data has the same structure as the training data
+print("New customer data (before scaling):")
+print(new_customer_df)
+
+# Apply the same scaling transformation
+new_customer_scaled = sc.transform(new_customer_df)
+
+# Make the prediction
+new_customer_pred_proba = ann.predict(new_customer_scaled)
+new_customer_pred = (new_customer_pred_proba > 0.5).astype(int)
+
+# Convert prediction probability to percentage
+new_customer_pred_proba_percentage = new_customer_pred_proba[0][0] * 100
+
+# Print the prediction result
+print(f"Prediction probability: {new_customer_pred_proba_percentage:.2f}%")
+print(f"Prediction (0 = No, 1 = Yes): {new_customer_pred[0][0]}")
+
+# Interpret the prediction
+if new_customer_pred[0][0] == 1:
+    print("The model predicts that the customer will leave the bank.")
+else:
+    print("The model predicts that the customer will stay with the bank.")
