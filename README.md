@@ -49,7 +49,7 @@ The confusion matrix provides a summary of the prediction results on a classific
 - **Specificity**: 95.49%
 - **Accuracy**: 85.85%
 
-![Confusion Matrix](path_to_your_confusion_matrix_image.png)
+![Confusion Matrix](https://raw.githubusercontent.com/NavarroAlexKU/Predicting-Customer-Churn/main/confusion%20matrix.jfif)
 
 **Classification Report:**
           precision    recall  f1-score   support
@@ -57,7 +57,7 @@ The confusion matrix provides a summary of the prediction results on a classific
        0       0.88      0.95      0.91      1595
        1       0.73      0.48      0.58       405
 
-accuracy                           0.86      2000
+       accuracy                           0.86      2000
 
 
 ### Explanation:
