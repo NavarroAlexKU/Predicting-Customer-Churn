@@ -116,3 +116,14 @@ if new_customer_pred[0][0] == 1:
     print("The model predicts that the customer will leave the bank.")
 else:
     print("The model predicts that the customer will stay with the bank.")
+```
+
+![Prediction Output](https://github.com/NavarroAlexKU/Predicting-Customer-Churn/blob/main/Prediction%20Output.png?raw=true)
+
+**Interpretation:**
+
+- The model predicts that there is a **2.41% probability** that the customer will leave the bank.
+- Since this probability is lower than the threshold of 50%, the model classifies this customer as **not likely to churn**.
+- **Conclusion**: Based on the model's prediction, we can infer that this customer is likely to stay with the bank.
+
+This low churn probability suggests that the customer's profile indicates a lower risk of leaving the bank, according to the patterns learned by the model during training.
